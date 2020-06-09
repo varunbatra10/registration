@@ -11,6 +11,7 @@ import java.io.InputStreamReader;
 import java.net.URLConnection;
 import java.util.logging.Logger;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,7 +48,7 @@ public class RegService {
 	 * @param users
 	 * @return
 	 */
-	public ResponseDto register(MultipartFile users) {
+	public ResponseDto register(MultipartFile users,HttpServletRequest request) {
 		log.info("RegService:register() started");
 		ResponseDto response = new ResponseDto();
 		try {
@@ -98,7 +99,7 @@ public class RegService {
 			}
 			response.setNo_of_rows_parsed(pass);
 			response.setNo_of_rows_failed(fail);
-			response.setError_file_url("localhost:8080/" + errorFileName);
+			response.setError_file_url("localhost:"+request.getLocalPort()+"/" + errorFileName);
 			csvWriter.close();
 			br.close();
 		} catch (Exception e) {
