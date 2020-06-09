@@ -5,6 +5,11 @@ import org.springframework.stereotype.Repository;
 
 import com.digilytics.registration.model.User;
 
+/**
+ * 
+ * @author vabatra
+ *
+ */
 @Repository(value="userRepository")
 public interface UserRepository extends JpaRepository<User, Integer>{
 

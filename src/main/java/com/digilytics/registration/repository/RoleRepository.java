@@ -7,6 +7,11 @@ import org.springframework.stereotype.Repository;
 
 import com.digilytics.registration.model.Role;
 
+/**
+ * 
+ * @author vabatra
+ *
+ */
 @Repository(value = "roleRepository")
 public interface RoleRepository extends JpaRepository<Role, Integer> {
 

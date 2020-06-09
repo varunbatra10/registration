@@ -1,5 +1,10 @@
 package com.digilytics.registration.Dto;
 
+/**
+ * 
+ * @author vabatra
+ *
+ */
 public class ResponseDto {
 
 	int no_of_rows_parsed;
